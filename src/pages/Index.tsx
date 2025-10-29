@@ -37,7 +37,6 @@ const characters: Character[] = [
   { id: 15, name: 'Сяо', element: 'Анемо', weapon: 'Копьё', rarity: 5 },
   { id: 16, name: 'Эола', element: 'Крио', weapon: 'Двуручный меч', rarity: 5 },
   { id: 17, name: 'Кадзуха', element: 'Анемо', weapon: 'Одноручный меч', rarity: 5 },
-  { id: 18, name: 'Аяка', element: 'Крио', weapon: 'Одноручный меч', rarity: 5 },
   { id: 19, name: 'Ёимия', element: 'Пиро', weapon: 'Лук', rarity: 5 },
   { id: 20, name: 'Кокоми', element: 'Гидро', weapon: 'Катализатор', rarity: 5 },
   { id: 21, name: 'Итто', element: 'Гео', weapon: 'Двуручный меч', rarity: 5 },
@@ -51,6 +50,18 @@ const characters: Character[] = [
   { id: 29, name: 'Странник', element: 'Анемо', weapon: 'Катализатор', rarity: 5 },
   { id: 30, name: 'Аль-Хайтам', element: 'Дендро', weapon: 'Одноручный меч', rarity: 5 },
   { id: 31, name: 'Дэхья', element: 'Пиро', weapon: 'Двуручный меч', rarity: 5 },
+  { id: 46, name: 'Невиллет', element: 'Гидро', weapon: 'Катализатор', rarity: 5 },
+  { id: 47, name: 'Риосли', element: 'Крио', weapon: 'Одноручный меч', rarity: 5 },
+  { id: 48, name: 'Фурина', element: 'Гидро', weapon: 'Одноручный меч', rarity: 5 },
+  { id: 49, name: 'Лини', element: 'Пиро', weapon: 'Двуручный меч', rarity: 5 },
+  { id: 50, name: 'Навия', element: 'Крио', weapon: 'Двуручный меч', rarity: 5 },
+  { id: 51, name: 'Арлекино', element: 'Пиро', weapon: 'Копьё', rarity: 5 },
+  { id: 52, name: 'Клоринда', element: 'Электро', weapon: 'Одноручный меч', rarity: 5 },
+  { id: 53, name: 'Сигевин', element: 'Анемо', weapon: 'Лук', rarity: 5 },
+  { id: 54, name: 'Эмили', element: 'Дендро', weapon: 'Копьё', rarity: 5 },
+  { id: 55, name: 'Каччаторе', element: 'Анемо', weapon: 'Катализатор', rarity: 5 },
+  { id: 56, name: 'Муалани', element: 'Пиро', weapon: 'Копьё', rarity: 5 },
+  { id: 57, name: 'Кинитч', element: 'Дендро', weapon: 'Двуручный меч', rarity: 5 },
   { id: 32, name: 'Барбара', element: 'Гидро', weapon: 'Катализатор', rarity: 4 },
   { id: 33, name: 'Беннет', element: 'Пиро', weapon: 'Одноручный меч', rarity: 4 },
   { id: 34, name: 'Син Цю', element: 'Гидро', weapon: 'Одноручный меч', rarity: 4 },
@@ -65,6 +76,27 @@ const characters: Character[] = [
   { id: 43, name: 'Ноэлль', element: 'Гео', weapon: 'Двуручный меч', rarity: 4 },
   { id: 44, name: 'Нин Гуан', element: 'Гео', weapon: 'Катализатор', rarity: 4 },
   { id: 45, name: 'Бэй Доу', element: 'Электро', weapon: 'Двуручный меч', rarity: 4 },
+  { id: 58, name: 'Чоньюн', element: 'Пиро', weapon: 'Двуручный меч', rarity: 4 },
+  { id: 59, name: 'Нинггуан', element: 'Гео', weapon: 'Катализатор', rarity: 4 },
+  { id: 60, name: 'Кэя', element: 'Крио', weapon: 'Одноручный меч', rarity: 4 },
+  { id: 61, name: 'Лиза', element: 'Электро', weapon: 'Катализатор', rarity: 4 },
+  { id: 62, name: 'Рэйзор', element: 'Электро', weapon: 'Двуручный меч', rarity: 4 },
+  { id: 63, name: 'Янь Фэй', element: 'Пиро', weapon: 'Катализатор', rarity: 4 },
+  { id: 64, name: 'Чунь Юнь', element: 'Крио', weapon: 'Двуручный меч', rarity: 4 },
+  { id: 65, name: 'Сиканоин', element: 'Гидро', weapon: 'Катализатор', rarity: 4 },
+  { id: 66, name: 'Шеврёз', element: 'Анемо', weapon: 'Двуручный меч', rarity: 4 },
+  { id: 67, name: 'Фремине', element: 'Крио', weapon: 'Одноручный меч', rarity: 4 },
+  { id: 68, name: 'Линетт', element: 'Анемо', weapon: 'Одноручный меч', rarity: 4 },
+  { id: 69, name: 'Шарлотта', element: 'Крио', weapon: 'Катализатор', rarity: 4 },
+  { id: 70, name: 'Гейминг', element: 'Анемо', weapon: 'Двуручный меч', rarity: 4 },
+  { id: 71, name: 'Каве', element: 'Дендро', weapon: 'Двуручный меч', rarity: 4 },
+  { id: 72, name: 'Фарузан', element: 'Анемо', weapon: 'Лук', rarity: 4 },
+  { id: 73, name: 'Лайла', element: 'Крио', weapon: 'Одноручный меч', rarity: 4 },
+  { id: 74, name: 'Яо Яо', element: 'Дендро', weapon: 'Копьё', rarity: 4 },
+  { id: 75, name: 'Кандакия', element: 'Гидро', weapon: 'Копьё', rarity: 4 },
+  { id: 76, name: 'Коллей', element: 'Дендро', weapon: 'Лук', rarity: 4 },
+  { id: 77, name: 'Дори', element: 'Дендро', weapon: 'Двуручный меч', rarity: 4 },
+  { id: 78, name: 'Тома', element: 'Пиро', weapon: 'Копьё', rarity: 4 },
 ];
 
 const teams: Record<number, Team[]> = {
@@ -135,14 +167,25 @@ export default function Index() {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState<'characters' | 'support'>('characters');
   const [selectedElement, setSelectedElement] = useState<string>('Все');
+  const [selectedRarity, setSelectedRarity] = useState<number | 'all'>('all');
+  const [favorites, setFavorites] = useState<number[]>([]);
 
   const elements = ['Все', 'Пиро', 'Гидро', 'Анемо', 'Электро', 'Дендро', 'Крио', 'Гео'];
+
+  const toggleFavorite = (charId: number) => {
+    setFavorites(prev => 
+      prev.includes(charId) 
+        ? prev.filter(id => id !== charId)
+        : [...prev, charId]
+    );
+  };
 
   const filteredCharacters = characters.filter(char => {
     const matchesSearch = char.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       char.element.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesElement = selectedElement === 'Все' || char.element === selectedElement;
-    return matchesSearch && matchesElement;
+    const matchesRarity = selectedRarity === 'all' || char.rarity === selectedRarity;
+    return matchesSearch && matchesElement && matchesRarity;
   });
 
   return (
@@ -175,6 +218,28 @@ export default function Index() {
                 <Icon name="MessageCircle" size={18} />
                 Поддержка
               </Button>
+              <div className="relative">
+                <Button
+                  variant="ghost"
+                  onClick={() => {
+                    setCurrentPage('characters');
+                    setSelectedRarity('all');
+                    setSelectedElement('Все');
+                    setSearchQuery('');
+                    const favChars = characters.filter(c => favorites.includes(c.id));
+                    if (favChars.length > 0) setSelectedChar(favChars[0]);
+                  }}
+                  className="gap-2"
+                >
+                  <Icon name="Heart" size={18} className={favorites.length > 0 ? 'fill-red-500 text-red-500' : ''} />
+                  Избранное
+                </Button>
+                {favorites.length > 0 && (
+                  <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
+                    {favorites.length}
+                  </span>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -193,28 +258,55 @@ export default function Index() {
                   className="pl-10 bg-card/50 backdrop-blur border-primary/20"
                 />
               </div>
-              <div className="flex flex-wrap gap-2 justify-center">
-                {elements.map((element) => {
-                  const isSelected = selectedElement === element;
-                  return (
+              <div className="space-y-3">
+                <div className="flex flex-wrap gap-2 justify-center">
+                  {elements.map((element) => {
+                    const isSelected = selectedElement === element;
+                    return (
+                      <button
+                        key={element}
+                        onClick={() => setSelectedElement(element)}
+                        className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 flex items-center gap-2 ${
+                          isSelected
+                            ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/30'
+                            : 'bg-card/50 backdrop-blur border border-primary/20 hover:border-primary/40'
+                        }`}
+                      >
+                        {element !== 'Все' && (
+                          <div className={`w-6 h-6 rounded-full ${elementColors[element]} flex items-center justify-center`}>
+                            <Icon name={elementIcons[element]} size={14} className="text-white" />
+                          </div>
+                        )}
+                        {element}
+                      </button>
+                    );
+                  })}
+                </div>
+                <div className="flex gap-2 justify-center">
+                  {['all', 5, 4].map((rarity) => (
                     <button
-                      key={element}
-                      onClick={() => setSelectedElement(element)}
+                      key={rarity}
+                      onClick={() => setSelectedRarity(rarity as number | 'all')}
                       className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 flex items-center gap-2 ${
-                        isSelected
-                          ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/30'
+                        selectedRarity === rarity
+                          ? 'bg-secondary text-secondary-foreground shadow-lg shadow-secondary/30'
                           : 'bg-card/50 backdrop-blur border border-primary/20 hover:border-primary/40'
                       }`}
                     >
-                      {element !== 'Все' && (
-                        <div className={`w-6 h-6 rounded-full ${elementColors[element]} flex items-center justify-center`}>
-                          <Icon name={elementIcons[element]} size={14} className="text-white" />
-                        </div>
+                      {rarity === 'all' ? ('
+                        <>
+                          <Icon name="Users" size={16} />
+                          Все
+                        </>
+                      ) : (
+                        <>
+                          <Icon name="Star" size={16} className="text-yellow-400 fill-yellow-400" />
+                          {rarity} звезд
+                        </>
                       )}
-                      {element}
                     </button>
-                  );
-                })}
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -249,10 +341,25 @@ export default function Index() {
                               <p className="text-xs text-muted-foreground">{char.weapon}</p>
                             </div>
                           </div>
-                          <div className="flex gap-1">
-                            {[...Array(char.rarity)].map((_, i) => (
-                              <Icon key={i} name="Star" size={14} className="text-yellow-400 fill-yellow-400" />
-                            ))}
+                          <div className="flex items-center gap-2">
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                toggleFavorite(char.id);
+                              }}
+                              className="p-1 hover:scale-110 transition-transform"
+                            >
+                              <Icon 
+                                name="Heart" 
+                                size={18} 
+                                className={favorites.includes(char.id) ? 'fill-red-500 text-red-500' : 'text-muted-foreground'} 
+                              />
+                            </button>
+                            <div className="flex gap-1">
+                              {[...Array(char.rarity)].map((_, i) => (
+                                <Icon key={i} name="Star" size={14} className="text-yellow-400 fill-yellow-400" />
+                              ))}
+                            </div>
                           </div>
                         </div>
                       </button>
