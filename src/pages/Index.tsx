@@ -11,6 +11,7 @@ interface Character {
   element: string;
   weapon: string;
   rarity: number;
+  image?: string;
 }
 
 interface Team {
@@ -20,16 +21,16 @@ interface Team {
 }
 
 const characters: Character[] = [
-  { id: 1, name: 'Дилюк', element: 'Пиро', weapon: 'Двуручный меч', rarity: 5 },
-  { id: 2, name: 'Кэ Цин', element: 'Электро', weapon: 'Одноручный меч', rarity: 5 },
-  { id: 3, name: 'Венти', element: 'Анемо', weapon: 'Лук', rarity: 5 },
-  { id: 4, name: 'Гань Юй', element: 'Крио', weapon: 'Лук', rarity: 5 },
-  { id: 5, name: 'Ху Тао', element: 'Пиро', weapon: 'Копьё', rarity: 5 },
-  { id: 6, name: 'Райдэн', element: 'Электро', weapon: 'Копьё', rarity: 5 },
-  { id: 7, name: 'Аяка', element: 'Крио', weapon: 'Одноручный меч', rarity: 5 },
-  { id: 8, name: 'Нахида', element: 'Дендро', weapon: 'Катализатор', rarity: 5 },
-  { id: 9, name: 'Джинн', element: 'Анемо', weapon: 'Одноручный меч', rarity: 5 },
-  { id: 10, name: 'Мона', element: 'Гидро', weapon: 'Катализатор', rarity: 5 },
+  { id: 1, name: 'Дилюк', element: 'Пиро', weapon: 'Двуручный меч', rarity: 5, image: 'https://static.wikia.nocookie.net/gensin-impact/images/3/3a/Character_Diluc_Portrait.png' },
+  { id: 2, name: 'Кэ Цин', element: 'Электро', weapon: 'Одноручный меч', rarity: 5, image: 'https://static.wikia.nocookie.net/gensin-impact/images/0/06/Character_Keqing_Portrait.png' },
+  { id: 3, name: 'Венти', element: 'Анемо', weapon: 'Лук', rarity: 5, image: 'https://static.wikia.nocookie.net/gensin-impact/images/8/8d/Character_Venti_Portrait.png' },
+  { id: 4, name: 'Гань Юй', element: 'Крио', weapon: 'Лук', rarity: 5, image: 'https://static.wikia.nocookie.net/gensin-impact/images/d/d2/Character_Ganyu_Portrait.png' },
+  { id: 5, name: 'Ху Тао', element: 'Пиро', weapon: 'Копьё', rarity: 5, image: 'https://static.wikia.nocookie.net/gensin-impact/images/2/2f/Character_Hu_Tao_Portrait.png' },
+  { id: 6, name: 'Райдэн', element: 'Электро', weapon: 'Копьё', rarity: 5, image: 'https://static.wikia.nocookie.net/gensin-impact/images/3/30/Character_Raiden_Shogun_Portrait.png' },
+  { id: 7, name: 'Аяка', element: 'Крио', weapon: 'Одноручный меч', rarity: 5, image: 'https://static.wikia.nocookie.net/gensin-impact/images/7/71/Character_Kamisato_Ayaka_Portrait.png' },
+  { id: 8, name: 'Нахида', element: 'Дендро', weapon: 'Катализатор', rarity: 5, image: 'https://static.wikia.nocookie.net/gensin-impact/images/4/48/Character_Nahida_Portrait.png' },
+  { id: 9, name: 'Джинн', element: 'Анемо', weapon: 'Одноручный меч', rarity: 5, image: 'https://static.wikia.nocookie.net/gensin-impact/images/2/20/Character_Jean_Portrait.png' },
+  { id: 10, name: 'Мона', element: 'Гидро', weapon: 'Катализатор', rarity: 5, image: 'https://static.wikia.nocookie.net/gensin-impact/images/7/73/Character_Mona_Portrait.png' },
   { id: 11, name: 'Кли', element: 'Пиро', weapon: 'Катализатор', rarity: 5 },
   { id: 12, name: 'Тарталья', element: 'Гидро', weapon: 'Лук', rarity: 5 },
   { id: 13, name: 'Чжун Ли', element: 'Гео', weapon: 'Копьё', rarity: 5 },
@@ -334,9 +335,17 @@ export default function Index() {
                       >
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
-                            <div className={`w-10 h-10 rounded-full ${elementColors[char.element]} flex items-center justify-center`}>
-                              <Icon name={elementIcons[char.element]} size={20} className="text-white" />
-                            </div>
+                            {char.image ? (
+                              <img 
+                                src={char.image} 
+                                alt={char.name}
+                                className="w-12 h-12 rounded-full object-cover border-2 border-primary/30"
+                              />
+                            ) : (
+                              <div className={`w-12 h-12 rounded-full ${elementColors[char.element]} flex items-center justify-center`}>
+                                <Icon name={elementIcons[char.element]} size={20} className="text-white" />
+                              </div>
+                            )}
                             <div className="text-left">
                               <p className="font-semibold">{char.name}</p>
                               <p className="text-xs text-muted-foreground">{char.weapon}</p>
@@ -375,9 +384,17 @@ export default function Index() {
                     <Card className="bg-gradient-to-br from-card/80 to-card/50 backdrop-blur border-primary/20">
                       <CardHeader>
                         <div className="flex items-center gap-4">
-                          <div className={`w-16 h-16 rounded-2xl ${elementColors[selectedChar.element]} flex items-center justify-center shadow-lg`}>
-                            <Icon name={elementIcons[selectedChar.element]} size={32} className="text-white" />
-                          </div>
+                          {selectedChar.image ? (
+                            <img 
+                              src={selectedChar.image} 
+                              alt={selectedChar.name}
+                              className="w-20 h-20 rounded-2xl object-cover border-2 border-primary/50 shadow-xl"
+                            />
+                          ) : (
+                            <div className={`w-20 h-20 rounded-2xl ${elementColors[selectedChar.element]} flex items-center justify-center shadow-lg`}>
+                              <Icon name={elementIcons[selectedChar.element]} size={32} className="text-white" />
+                            </div>
+                          )}
                           <div>
                             <CardTitle className="text-3xl">{selectedChar.name}</CardTitle>
                             <CardDescription className="text-base mt-1">
