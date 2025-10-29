@@ -28,6 +28,43 @@ const characters: Character[] = [
   { id: 6, name: 'Райдэн', element: 'Электро', weapon: 'Копьё', rarity: 5 },
   { id: 7, name: 'Аяка', element: 'Крио', weapon: 'Одноручный меч', rarity: 5 },
   { id: 8, name: 'Нахида', element: 'Дендро', weapon: 'Катализатор', rarity: 5 },
+  { id: 9, name: 'Джинн', element: 'Анемо', weapon: 'Одноручный меч', rarity: 5 },
+  { id: 10, name: 'Мона', element: 'Гидро', weapon: 'Катализатор', rarity: 5 },
+  { id: 11, name: 'Кли', element: 'Пиро', weapon: 'Катализатор', rarity: 5 },
+  { id: 12, name: 'Тарталья', element: 'Гидро', weapon: 'Лук', rarity: 5 },
+  { id: 13, name: 'Чжун Ли', element: 'Гео', weapon: 'Копьё', rarity: 5 },
+  { id: 14, name: 'Альбедо', element: 'Гео', weapon: 'Одноручный меч', rarity: 5 },
+  { id: 15, name: 'Сяо', element: 'Анемо', weapon: 'Копьё', rarity: 5 },
+  { id: 16, name: 'Эола', element: 'Крио', weapon: 'Двуручный меч', rarity: 5 },
+  { id: 17, name: 'Кадзуха', element: 'Анемо', weapon: 'Одноручный меч', rarity: 5 },
+  { id: 18, name: 'Аяка', element: 'Крио', weapon: 'Одноручный меч', rarity: 5 },
+  { id: 19, name: 'Ёимия', element: 'Пиро', weapon: 'Лук', rarity: 5 },
+  { id: 20, name: 'Кокоми', element: 'Гидро', weapon: 'Катализатор', rarity: 5 },
+  { id: 21, name: 'Итто', element: 'Гео', weapon: 'Двуручный меч', rarity: 5 },
+  { id: 22, name: 'Шэнь Хэ', element: 'Крио', weapon: 'Копьё', rarity: 5 },
+  { id: 23, name: 'Яэ Мико', element: 'Электро', weapon: 'Катализатор', rarity: 5 },
+  { id: 24, name: 'Аято', element: 'Гидро', weapon: 'Одноручный меч', rarity: 5 },
+  { id: 25, name: 'Е Лань', element: 'Гидро', weapon: 'Лук', rarity: 5 },
+  { id: 26, name: 'Тигнари', element: 'Дендро', weapon: 'Лук', rarity: 5 },
+  { id: 27, name: 'Сайно', element: 'Электро', weapon: 'Копьё', rarity: 5 },
+  { id: 28, name: 'Нилу', element: 'Гидро', weapon: 'Одноручный меч', rarity: 5 },
+  { id: 29, name: 'Странник', element: 'Анемо', weapon: 'Катализатор', rarity: 5 },
+  { id: 30, name: 'Аль-Хайтам', element: 'Дендро', weapon: 'Одноручный меч', rarity: 5 },
+  { id: 31, name: 'Дэхья', element: 'Пиро', weapon: 'Двуручный меч', rarity: 5 },
+  { id: 32, name: 'Барбара', element: 'Гидро', weapon: 'Катализатор', rarity: 4 },
+  { id: 33, name: 'Беннет', element: 'Пиро', weapon: 'Одноручный меч', rarity: 4 },
+  { id: 34, name: 'Син Цю', element: 'Гидро', weapon: 'Одноручный меч', rarity: 4 },
+  { id: 35, name: 'Фишль', element: 'Электро', weapon: 'Лук', rarity: 4 },
+  { id: 36, name: 'Сян Лин', element: 'Пиро', weapon: 'Копьё', rarity: 4 },
+  { id: 37, name: 'Розария', element: 'Крио', weapon: 'Копьё', rarity: 4 },
+  { id: 38, name: 'Диона', element: 'Крио', weapon: 'Лук', rarity: 4 },
+  { id: 39, name: 'Сахароза', element: 'Анемо', weapon: 'Катализатор', rarity: 4 },
+  { id: 40, name: 'Сара', element: 'Электро', weapon: 'Лук', rarity: 4 },
+  { id: 41, name: 'Горо', element: 'Гео', weapon: 'Лук', rarity: 4 },
+  { id: 42, name: 'Саю', element: 'Анемо', weapon: 'Двуручный меч', rarity: 4 },
+  { id: 43, name: 'Ноэлль', element: 'Гео', weapon: 'Двуручный меч', rarity: 4 },
+  { id: 44, name: 'Нин Гуан', element: 'Гео', weapon: 'Катализатор', rarity: 4 },
+  { id: 45, name: 'Бэй Доу', element: 'Электро', weapon: 'Двуручный меч', rarity: 4 },
 ];
 
 const teams: Record<number, Team[]> = {
@@ -97,11 +134,16 @@ export default function Index() {
   const [selectedChar, setSelectedChar] = useState<Character | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState<'characters' | 'support'>('characters');
+  const [selectedElement, setSelectedElement] = useState<string>('Все');
 
-  const filteredCharacters = characters.filter(char =>
-    char.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    char.element.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const elements = ['Все', 'Пиро', 'Гидро', 'Анемо', 'Электро', 'Дендро', 'Крио', 'Гео'];
+
+  const filteredCharacters = characters.filter(char => {
+    const matchesSearch = char.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      char.element.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesElement = selectedElement === 'Все' || char.element === selectedElement;
+    return matchesSearch && matchesElement;
+  });
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
@@ -141,7 +183,7 @@ export default function Index() {
       <main className="container mx-auto px-4 py-8">
         {currentPage === 'characters' ? (
           <>
-            <div className="mb-8 max-w-2xl mx-auto">
+            <div className="mb-8 max-w-4xl mx-auto space-y-4">
               <div className="relative">
                 <Icon name="Search" size={20} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
                 <Input
@@ -150,6 +192,29 @@ export default function Index() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-10 bg-card/50 backdrop-blur border-primary/20"
                 />
+              </div>
+              <div className="flex flex-wrap gap-2 justify-center">
+                {elements.map((element) => {
+                  const isSelected = selectedElement === element;
+                  return (
+                    <button
+                      key={element}
+                      onClick={() => setSelectedElement(element)}
+                      className={`px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 flex items-center gap-2 ${
+                        isSelected
+                          ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/30'
+                          : 'bg-card/50 backdrop-blur border border-primary/20 hover:border-primary/40'
+                      }`}
+                    >
+                      {element !== 'Все' && (
+                        <div className={`w-6 h-6 rounded-full ${elementColors[element]} flex items-center justify-center`}>
+                          <Icon name={elementIcons[element]} size={14} className="text-white" />
+                        </div>
+                      )}
+                      {element}
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
