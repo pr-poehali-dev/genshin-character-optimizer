@@ -293,7 +293,7 @@ export default function Index() {
                           : 'bg-card/50 backdrop-blur border border-primary/20 hover:border-primary/40'
                       }`}
                     >
-                      {rarity === 'all' ? ('
+                      {rarity === 'all' ? (
                         <>
                           <Icon name="Users" size={16} />
                           Все
