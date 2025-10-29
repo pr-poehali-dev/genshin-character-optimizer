@@ -60,7 +60,7 @@ const characters: Character[] = [
   { id: 53, name: 'Сигевин', element: 'Анемо', weapon: 'Лук', rarity: 5 },
   { id: 54, name: 'Эмили', element: 'Дендро', weapon: 'Копьё', rarity: 5 },
   { id: 55, name: 'Каччаторе', element: 'Анемо', weapon: 'Катализатор', rarity: 5 },
-  { id: 56, name: 'Муалани', element: 'Пиро', weapon: 'Копьё', rarity: 5 },
+  { id: 56, name: 'Муалани', element: 'Гидро', weapon: 'Катализатор', rarity: 5 },
   { id: 57, name: 'Кинитч', element: 'Дендро', weapon: 'Двуручный меч', rarity: 5 },
   { id: 32, name: 'Барбара', element: 'Гидро', weapon: 'Катализатор', rarity: 4 },
   { id: 33, name: 'Беннет', element: 'Пиро', weapon: 'Одноручный меч', rarity: 4 },
